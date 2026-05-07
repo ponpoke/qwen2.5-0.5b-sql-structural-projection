@@ -10,3 +10,6 @@ While the results of this case study are promising, the following limitations mu
 - **Source Adapter Quality Matters:** Structural Projection may transfer both beneficial and harmful components of the source adapter. If the source adapter degrades its own base model, the projected adapter may also introduce interference.
 - **Not Monotonic with Model Size:** Larger target models do not necessarily benefit more. Improvements depend on whether the adapter complements the target model's existing capabilities.
 - **Interference Risk:** On stronger target models, the projected adapter can act as noise and reduce accuracy.
+- **Positive Source Required:** The strongest results were observed when the source adapter first improved its own base model. Source adapters that degrade their base model may also project harmful components.
+- **Family-Specific Evidence:** The strongest positive transfer results were observed within the Qwen2.5-Coder family. Cross-family transfer remains unverified.
+- **Benchmark-Specific Result:** The positive-teacher experiment was evaluated on SQL-50. Broader benchmarks such as Spider and BIRD remain future work.

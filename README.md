@@ -56,6 +56,27 @@ This also revealed an important source-adapter limitation: the original 7B SQL L
 
 In short, Structural Projection should be treated as a diagnostic and transfer mechanism, not as a guaranteed improvement method.
 
+## Positive Teacher Experiment
+
+After observing that a weak source adapter could introduce interference, we tested a higher-quality SQL adapter on the Qwen2.5-Coder family.
+
+Unlike the previous source adapter, this adapter improved its own 7B teacher baseline before projection.
+
+| Target Model | Size | Base Acc | Adapter Acc | Delta | Interpretation |
+|---|---:|---:|---:|---:|---|
+| Qwen2.5-Coder-7B | Teacher | 62.0% | 78.0% | +16.0% | Positive teacher |
+| Qwen2.5-Coder-3B | Student | 66.0% | 72.0% | +6.0% | Positive improvement |
+| Qwen2.5-Coder-1.5B | Student | 38.0% | 44.0% | +6.0% | Positive improvement |
+| Qwen2.5-Coder-0.5B | Student | 24.0% | 28.0% | +4.0% | Positive improvement |
+
+### Interpretation
+
+This experiment supports the Source Adapter Quality Gate hypothesis.
+
+When the source adapter improved its own teacher model, Structural Projection produced consistent positive improvements across smaller Qwen2.5-Coder targets.
+
+This does not imply that Structural Projection guarantees improvement for every adapter or model family. Rather, it suggests that source adapter quality is a critical upstream condition for successful projection.
+
 ## Reproduce
 
 Install dependencies:

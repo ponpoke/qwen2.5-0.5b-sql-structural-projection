@@ -37,6 +37,21 @@ We evaluated the same Structural Projection approach across multiple Qwen2.5 tar
 | Qwen2.5-1.5B-Instruct | Student | 48.0% | 46.0% | -2.0% | Mild interference |
 | Qwen2.5-0.5B-Instruct | Student | 32.0% | 36.0% | +4.0% | Positive improvement |
 
+## Positive Teacher Validation (Qwen2.5-Coder)
+
+To verify the **Source Adapter Quality Gate** hypothesis, we tested a high-quality SQL DPO adapter on the Qwen2.5-Coder family. Unlike the previous experiment, this source adapter significantly improved its own base model.
+
+| Target Model | Role | Base Acc | Adapter Acc | **Delta** | Interpretation |
+|---|---|---:|---:|---:|---|
+| **Qwen2.5-Coder-7B** | **Teacher** | 62.0% | 78.0% | **+16.0%** | **Positive Teacher** |
+| **Qwen2.5-Coder-3B** | Student | 66.0% | 72.0% | **+6.0%** | Consistent Gain |
+| **Qwen2.5-Coder-1.5B**| Student | 38.0% | 44.0% | **+6.0%** | Consistent Gain |
+| **Qwen2.5-Coder-0.5B**| Student | 24.0% | 28.0% | **+4.0%** | Consistent Gain |
+
+### Key Conclusion
+
+Structural Projection is a **delta transfer mechanism**. Its success is highly dependent on the quality of the source adapter. When the source adapter passes the quality gate, projection yields consistent positive improvements across all tested student scales.
+
 This results support the **Complementarity Hypothesis**: Structural Projection provides the most value when the target model has a clear task deficit.
 
 Detailed raw logs can be found in [reports/failure_cases_qwen05b_alpha16.json](../reports/failure_cases_qwen05b_alpha16.json).
