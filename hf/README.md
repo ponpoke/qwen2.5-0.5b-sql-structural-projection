@@ -29,6 +29,11 @@ metrics:
 
 Experimental no-retraining structural projection of a Qwen2.5-7B SQL LoRA into Qwen2.5-0.5B-Instruct.
 
+## Framework
+
+This case study was produced using Neural-Scalpel:  
+[ponpoke/Neural-Scalpel](https://github.com/ponpoke/Neural-Scalpel)
+
 It is not a fully trained SQL model and does not guarantee general SQL improvement.
 
 ## Base Model
