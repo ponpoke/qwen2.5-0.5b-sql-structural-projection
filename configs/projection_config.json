@@ -1,0 +1,13 @@
+{
+  "method": "structural_projection_baseline_v2",
+  "source_base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "target_base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "source_adapter": "Qwen2.5-7B SQL LoRA",
+  "target_adapter_type": "PEFT LoRA",
+  "rank": 16,
+  "best_tested_alpha": 16,
+  "layer_mapping": "interpolated",
+  "compression": "RSVD",
+  "behavioral_alignment_used": false,
+  "gradient_finetuning_used": false
+}

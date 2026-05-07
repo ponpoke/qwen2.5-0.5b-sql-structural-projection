@@ -1,0 +1,10 @@
+{
+  "method": "structural_projection_baseline_v2",
+  "target_base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "source_base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "best_tested_alpha": 16,
+  "no_gradient_finetuning": true,
+  "behavioral_alignment_used": false,
+  "framework": "Neural-Scalpel",
+  "timestamp": "2026-05-07T10:42:00Z"
+}

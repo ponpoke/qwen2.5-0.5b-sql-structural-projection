@@ -1,0 +1,40 @@
+{
+  "project": "Neural-Scalpel",
+  "experiment": "Qwen2.5 7B -> 0.5B SQL Structural Projection Alpha Sweep",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "source_adapter": "Qwen2.5-7B-SQL-LoRA",
+  "sweep_results": [
+    {
+      "alpha": "Baseline",
+      "accuracy": 0.32,
+      "execution_success": 0.38,
+      "syntax_valid": 37
+    },
+    {
+      "alpha": 8,
+      "accuracy": 0.34,
+      "execution_success": 0.42,
+      "syntax_valid": 39
+    },
+    {
+      "alpha": 16,
+      "accuracy": 0.36,
+      "execution_success": 0.44,
+      "syntax_valid": 40
+    },
+    {
+      "alpha": 24,
+      "accuracy": 0.36,
+      "execution_success": 0.44,
+      "syntax_valid": 40
+    },
+    {
+      "alpha": 32,
+      "accuracy": 0.34,
+      "execution_success": 0.46,
+      "syntax_valid": 41
+    }
+  ],
+  "best_balanced_alpha": 16,
+  "summary": "Accuracy peaks at alpha=16-24. Execution success continues to improve up to alpha=32 at the cost of exact logical accuracy (over-steering)."
+}

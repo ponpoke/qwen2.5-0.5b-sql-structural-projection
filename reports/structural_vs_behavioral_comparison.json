@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "accuracy": 0.32,
+    "execution_success": 0.38,
+    "syntax_valid": 37
+  },
+  "structural_projection_alpha16": {
+    "accuracy": 0.36,
+    "execution_success": 0.44,
+    "syntax_valid": 40
+  },
+  "behavioral_alignment_calibrated": {
+    "accuracy": 0.32,
+    "execution_success": 0.38,
+    "syntax_valid": 37
+  },
+  "behavioral_alignment_standard": {
+    "accuracy": 0.0,
+    "execution_success": 0.0,
+    "syntax_valid": 0
+  }
+}

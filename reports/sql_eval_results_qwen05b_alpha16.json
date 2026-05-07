@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "base_model": "C:\\Users\\ponzu\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-0.5B-Instruct\\snapshots\\7ae557604adf67be50417f59c2c2f167def9a775",
+    "adapter_path": "routes/qwen05b_alpha16/peft_adapter",
+    "num_cases": 50
+  },
+  "adapter_stats": {
+    "total": 50,
+    "syntax_valid": 40,
+    "execution_success": 22,
+    "exact_match": 18,
+    "categories": {
+      "basic_select": {
+        "total": 10,
+        "pass": 0,
+        "correct": 0
+      },
+      "aggregation": {
+        "total": 10,
+        "pass": 4,
+        "correct": 1
+      },
+      "joins": {
+        "total": 10,
+        "pass": 9,
+        "correct": 8
+      },
+      "subqueries": {
+        "total": 10,
+        "pass": 9,
+        "correct": 9
+      },
+      "complex_logic": {
+        "total": 10,
+        "pass": 0,
+        "correct": 0
+      }
+    },
+    "execution_success_rate": 0.44,
+    "execution_accuracy": 0.36
+  },
+  "baseline_stats": {
+    "total": 50,
+    "syntax_valid": 37,
+    "execution_success": 19,
+    "exact_match": 16,
+    "categories": {
+      "basic_select": {
+        "total": 10,
+        "pass": 0,
+        "correct": 0
+      },
+      "aggregation": {
+        "total": 10,
+        "pass": 3,
+        "correct": 1
+      },
+      "joins": {
+        "total": 10,
+        "pass": 8,
+        "correct": 7
+      },
+      "subqueries": {
+        "total": 10,
+        "pass": 8,
+        "correct": 8
+      },
+      "complex_logic": {
+        "total": 10,
+        "pass": 0,
+        "correct": 0
+      }
+    },
+    "execution_success_rate": 0.38,
+    "execution_accuracy": 0.32
+  },
+  "comparison": {
+    "overall": {
+      "execution_success_delta": 0.06,
+      "execution_accuracy_delta": 0.03999999999999998
+    },
+    "categories": {
+      "basic_select": {
+        "success_delta": 0.0,
+        "accuracy_delta": 0.0
+      },
+      "aggregation": {
+        "success_delta": 0.1,
+        "accuracy_delta": 0.0
+      },
+      "joins": {
+        "success_delta": 0.1,
+        "accuracy_delta": 0.1
+      },
+      "subqueries": {
+        "success_delta": 0.1,
+        "accuracy_delta": 0.1
+      },
+      "complex_logic": {
+        "success_delta": 0.0,
+        "accuracy_delta": 0.0
+      }
+    }
+  }
+}

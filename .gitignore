@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# large model artifacts
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+
+# generated heavy artifacts
+routes/
+payloads/
+checkpoints/
+cache/
+outputs/
+
+# logs
+*.log
+wandb/
+runs/
+
+# OS
+.DS_Store
+Thumbs.db
