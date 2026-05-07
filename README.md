@@ -35,6 +35,27 @@ This case study was produced using Neural-Scalpel:
 2. **Structural vs Behavioral:** Structural Projection outperformed the tested Behavioral Alignment variants in this cross-scale setup. The tested Behavioral Alignment adapters either failed to improve or collapsed.
 3. **No Observed Regression:** No baseline-correct cases were broken by the projected adapter at the best tested alpha setting.
 
+## Cross-Size Generalization
+
+We evaluated the same Structural Projection approach across multiple Qwen2.5 target sizes.
+
+| Target Model | Size | Base Acc | Adapter Acc | Delta | Interpretation |
+|---|---:|---:|---:|---:|---|
+| Qwen2.5-7B-Instruct | Teacher | 62.0% | 56.0% | -6.0% | Source adapter degraded the already-strong teacher baseline |
+| Qwen2.5-3B-Instruct | Student | 30.0% | 34.0% | +4.0% | Positive improvement |
+| Qwen2.5-1.5B-Instruct | Student | 48.0% | 46.0% | -2.0% | Mild interference |
+| Qwen2.5-0.5B-Instruct | Student | 32.0% | 36.0% | +4.0% | Positive improvement |
+
+### Interpretation
+
+The results suggest that Structural Projection is most useful when the target model has a clear deficit on the target task.
+
+When the target model is already relatively strong, the projected adapter can act as an interfering task vector rather than a helpful one. This was observed in the 1.5B target and the 7B teacher baseline.
+
+This also revealed an important source-adapter limitation: the original 7B SQL LoRA degraded the Qwen2.5-7B-Instruct baseline on SQL-50. Therefore, the projected adapter may inherit both useful and harmful components of the source delta.
+
+In short, Structural Projection should be treated as a diagnostic and transfer mechanism, not as a guaranteed improvement method.
+
 ## Reproduce
 
 Install dependencies:

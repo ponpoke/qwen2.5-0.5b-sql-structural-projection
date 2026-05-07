@@ -26,4 +26,17 @@ We mapped the performance across varying signal intensities:
 - **Fixed Hallucinations:** Two cases (`joins_004`, `subqueries_001`) that produced conversational text in the baseline were corrected to valid SQL.
 - **Zero Regression:** No cases that were correctly answered by the baseline regressed when using the $\alpha=16$ adapter.
 
+## Cross-Size Generalization
+
+We evaluated the same Structural Projection approach across multiple Qwen2.5 target sizes:
+
+| Target Model | Size | Base Acc | Adapter Acc | Delta | Interpretation |
+|---|---:|---:|---:|---:|---|
+| Qwen2.5-7B-Instruct | Teacher | 62.0% | 56.0% | -6.0% | Source adapter degraded the already-strong teacher baseline |
+| Qwen2.5-3B-Instruct | Student | 30.0% | 34.0% | +4.0% | Positive improvement |
+| Qwen2.5-1.5B-Instruct | Student | 48.0% | 46.0% | -2.0% | Mild interference |
+| Qwen2.5-0.5B-Instruct | Student | 32.0% | 36.0% | +4.0% | Positive improvement |
+
+This results support the **Complementarity Hypothesis**: Structural Projection provides the most value when the target model has a clear task deficit.
+
 Detailed raw logs can be found in [reports/failure_cases_qwen05b_alpha16.json](../reports/failure_cases_qwen05b_alpha16.json).
